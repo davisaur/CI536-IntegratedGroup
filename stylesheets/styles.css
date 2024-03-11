@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    margin: 0px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: black ;
+    color: white;
+    padding: 8px;
+}
+
+.topnav a {
+    display: block;
+    float: left;
+    padding: 0.25em;    
+    color: white;
+}
+
+.topnav {
+    float: left;
+}
+
+.topnav #basket-button {
+    float: right;
+}
+
+.topnav #account-button {
+    float: right;
+}
+
+.topnav a:hover {
+    background-color: darkgray;
+}
