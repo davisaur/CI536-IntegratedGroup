@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/register.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="register_wrapper">
+        <div class="register_container">
+            <div class="register_container_flex">
+                <div class="register_container_column">
+                    <label for="fname">Forename:</label>
+                    <input type="text" placeholder="First Name" name="fname" class="field" required>
+    
+                    <label for="fname">Surname:</label>
+                    <input type="text" placeholder="Last Name" name="lname" class="field" required>
+                    <hr class="solid">
+                    <label for="email">E-mail Address:</label>
+                    <input type="email" placeholder="Enter E-Mail Address" name="email" class="field" required>
+    
+                    <label for="psw">Password:</label>
+                    <input type="password" placeholder="Enter Password" name="psw" class="field" required>
+    
+                    <label for="pswconfirm">Re-enter password:</label>
+                    <input type="password" placeholder="Enter Password" name="pswconfirm" class="field" required>
+                    <!-- <hr class="solid"> -->
+                </div>
+                <div class="register_container_column">
+                    <label for="addline1">Address Line 1:</label>
+                    <input type="text" name="addline1" class="field" required>
+    
+                    <label for="addline2">Address Line 2:</label>
+                    <input type="text" name="addline2" class="field">
+    
+                    <label for="city">City:</label>
+                    <input type="text" name="city" class="field" required>
+    
+                    <label for="postcode">Postcode:</label>
+                    <input type="text" name="postcode" class="field" required>
+    
+                    <label for="phoneNum">Phone Number:</label>
+                    <input type="tel" name="phoneNum" class="field" required>
+                </div>
+            </div>
+            <button type="submit">Register</button>
+        </div>
+
+        <div class="error-message-box">
+            <img src="images/alert.png" alt="Alert Icon">
+            <div class="error-container">
+                <h4 class="error-heading">There was a problem</h4>
+                <span class="alert-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ut?</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
