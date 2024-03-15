@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/login.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="login_wrapper">
         <div class="login_container">
             <label for="uname"><b>E-mail Address:</b></label>
-            <input type="email" placeholder="Enter E-Mail Address" name="email" class="field" required>
+            <input type="email" placeholder="Enter E-Mail Address" name="email" id="email" class="field" required>
 
             <label for="psw"><b>Password:</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" class="field" required>
+            <input type="password" placeholder="Enter Password" name="psw" id="password" class="field" required>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
@@ -29,5 +29,7 @@
             </div>
         </div>
     </div>
+
+    <script src="login.js"></script>
 </body>
 </html>
