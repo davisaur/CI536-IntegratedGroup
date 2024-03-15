@@ -7,17 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="login_container">
-        <label for="uname"><b>E-mail Address:</b></label>
-        <input type="email" placeholder="Enter E-Mail Address" name="email" class="field" required>
+    <div class="login_wrapper">
+        <div class="login_container">
+            <label for="uname"><b>E-mail Address:</b></label>
+            <input type="email" placeholder="Enter E-Mail Address" name="email" class="field" required>
 
-        <label for="psw"><b>Password:</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" class="field" required>
+            <label for="psw"><b>Password:</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" class="field" required>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <br>
+            <button type="submit">Login</button>
+        </div>
 
-        <button type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-      </div>
+        <div class="error-message-box">
+            <img src="images/alert.png" alt="Alert Icon">
+            <div class="error-container">
+                <h4 class="error-heading">There was a problem</h4>
+                <span class="alert-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ut?</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

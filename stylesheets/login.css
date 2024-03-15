@@ -2,7 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.login_container {
+/* ----- Login Container ----- */
+
+.login_wrapper {
     position: absolute;
     margin: 0;
     top: 50%;
@@ -10,8 +12,54 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.field {
-    display: block;
+.login_container {
+    outline: 0.5px solid rgb(164, 164, 164);
+    padding: 15px;
+    border-radius: 0.5em;
+    box-shadow: 0px 0ch 10px rgb(239, 239, 239);
+}
+
+.login_container .field {
+    width: 95%;
+    height: 2em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+
+.login_container button[type=submit] {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em 2em;
+    
+}
+
+/* ----- Error Container ----- */
+
+.error-message-box {
+    display: block;
+    outline: 1px solid red;
+    padding: 10px;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 20px rgb(241, 179, 179);
+    margin-top: 1em;
+}
+
+.error-message-box img {
+    position: absolute;
+    display:inline;
+    width: 36px;
+}
+
+.error-container {
+    position:relative;
+    width: 85%;
+    left: 15%;
+}
+
+.error-heading {
+    margin: 0px;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
