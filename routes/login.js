@@ -1,14 +1,14 @@
+require('dotenv').config();
 const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
 
 const con = mysql.createConnection({
-    host: 'db.davisaur.me',
-    user: 'groupproj',
-    password: '*r!%sV$nPZ5@%W%4',
-    database: 'groupproj',
-    port: '3306'
+	host: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	database: process.env.DB_DATABASE
 })
 const app = express();
 
@@ -19,12 +19,17 @@ app.use(session({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, 'public')));
+const publicPath = path.join(__dirname, '../public');
 
 
-app.get('/', function (req,res){
-    res.sendFile(path.join(__dirname + '/login.html'));
-})
+app.get('/', function (req, res) {
+    res.sendFile(path.join(publicPath  +'/index.html'));
+});
+
+app.get('/login', function (req, res) {
+    res.sendFile(path.join(publicPath + '/login.html'));
+});	
 
 app.post('/auth', function(req, res) {
 
@@ -47,5 +52,16 @@ app.post('/auth', function(req, res) {
 	}
 });
 
+app.get('/home', function (req, res) {
+    if (req.session.loggedin) {
+        res.send('Welcome back, ' + req.session.username + '!');
+    } else {
+        res.send('Please login to view this page');
+    }
+    res.end();
+});
 
-app.listen("3000");
+const PORT = 3000;
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
+  });
