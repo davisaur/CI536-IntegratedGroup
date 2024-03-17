@@ -5,30 +5,31 @@ body {
 
 /* ----- Navbar ----- */
 .topnav {
-    overflow: hidden;
+    display: flex;
     background-color: black ;
     color: white;
     padding: 8px;
+    justify-content: space-evenly;
 }
 
 .topnav a {
     display: block;
-    float: left;
     padding: 0.25em;    
     color: white;
 }
 
-/* .topnav {
-    float: left;
+.topnav select {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
 
-.topnav #basket-button {
-    float: right;
+.topnav .search-bar {
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: none;
 }
 
-.topnav #account-button {
-    float: right;
-} */
 
 .topnav a:hover {
     background-color: darkgray;
@@ -50,7 +51,8 @@ body {
 
 .container {
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: visible;
     /* margin: 1em; */
 }
 
@@ -58,13 +60,14 @@ body {
     border: 1px solid rgb(179, 179, 179);
     border-radius: 5px;
     margin-right: 1em;
+    margin-bottom: 4px;
     padding: 1em;
     width: 250px;
     min-width: 200px;
 }
 
 .item:hover {
-    transform: scale(1.03);
+    text-decoration: underline;
 }
 
 .product-name {
@@ -81,4 +84,26 @@ body {
     width: 100%;
     max-height: 300px;
     object-fit: cover;
+}
+
+/* ----- Custom Scroll Bar ----- */
+/* height */
+::-webkit-scrollbar {
+    height: 8px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
