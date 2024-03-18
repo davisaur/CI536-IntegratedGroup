@@ -19,31 +19,36 @@ app.use(session({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-const publicPath = path.join(__dirname, '../public');
-
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(publicPath  +'/index.html'));
+	res.sendFile(path.join(__dirname + '/index.html'));
+
 });
 
 app.get('/login', function (req, res) {
-    res.sendFile(path.join(publicPath + '/login.html'));
-});	
+	res.sendFile(path.join(__dirname, '..', 'public/login.html'));
 
-app.post('/auth', function(req, res) {
+});
+
+app.post('/auth', function (req, res) {
 
 	const username = req.body.email;
 	const password = req.body.password;
 	if (username && password) {
-		con.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
+		con.query('SELECT * FROM users WHERE email_address = ? AND password = ?', [username, password], function (error, results, fields) {
+			if (error){
+				throw error;
+			}
+			
+			if (fields.length > 0) {
 				req.session.loggedin = true;
 				req.session.username = username;
-				res.redirect('/home');
+				res.redirect('/');
 			} else {
 				res.send('Wrong username or Password');
-			}			
+				res.redirect('/login')
+			}
 			res.end();
 		});
 	} else {
@@ -52,16 +57,10 @@ app.post('/auth', function(req, res) {
 	}
 });
 
-app.get('/home', function (req, res) {
-    if (req.session.loggedin) {
-        res.send('Welcome back, ' + req.session.username + '!');
-    } else {
-        res.send('Please login to view this page');
-    }
-    res.end();
-});
+
+
 
 const PORT = 3000;
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
-  });
+});
