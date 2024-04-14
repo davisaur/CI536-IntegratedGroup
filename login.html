@@ -9,16 +9,22 @@
 <body>
     <div class="login_wrapper">
         <div class="login_container">
-            <label for="uname"><b>E-mail Address:</b></label>
-            <input type="email" placeholder="Enter E-Mail Address" name="email" class="field" required>
+            <form action="authenticate.php" method="post">
+                <!-- <label for="uname"><b>E-mail Address:</b></label>
+                <input type="email" placeholder="Enter E-Mail Address" name="email" id="email" class="field" required> -->
+                <label for="uname"><b>E-mail Address:</b></label>
+                <input type="text" placeholder="Enter username" name="username" id="username" class="field" required>
 
-            <label for="psw"><b>Password:</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" class="field" required>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-            <br>
-            <button type="submit">Login</button>
+                <label for="psw"><b>Password:</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="password" class="field" required>
+              
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <br>
+                
+                <button type="submit">Login</button>
+        </form>
         </div>
 
         <div class="error-message-box">
