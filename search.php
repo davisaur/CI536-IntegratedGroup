@@ -1,4 +1,59 @@
-<!DOCTYPE html>
+<?php
+    $servername = "db.davisaur.me";
+    $username = "groupproj";
+    $password = "*r!%sV\$nPZ5@%W%4"; 
+    $dbname = "groupproj"; 
+
+    $html = '';
+
+    if(isset($_REQUEST['search'])) {
+        $search = $_REQUEST['search'];
+        debug_to_console("Search Parameter Set.");
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn->connect_error) {
+            debug_to_console("Connection to SQL server failed.");
+            http_response_code(500);
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT id, name, price FROM `products` WHERE name LIKE '%$search%';";
+        $result = $conn->query($sql);
+
+        if($result->num_rows > 0) {
+            $results = array();
+            
+            // Output data of each row
+            while($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+            debug_to_console("Success, item searched.");
+
+            foreach($results as $item) {
+                $html .= "<div class=\"item\">
+                <img src=\"images/products/{$item['id']}.jpg\" alt=\"\" class=\"product-img\">
+                <h4 class=\"product-name\">{$item['name']}</h4>
+                <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
+            </div>";
+            }
+        } else {
+            $html = "<h2>No result found :(</h2>";
+            debug_to_console("No result.");
+        }
+    } else {
+        debug_to_console("No search parameter detected.");
+
+    }
+
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +61,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="stylesheets/navbar.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="scripts/search.js"></script>
 </head>
 <body>
     <div class="topnav">
@@ -19,7 +75,7 @@
             <option value="4">Home, Garden &amp; DIY</option>
             <option value="5">Pets</option>
         </select>
-        <input type="text" placeholder="Search for products..." class="search-bar">
+        <input type="text" placeholder="Search for products..." id="searchbar">
         <a href="/basket" id="basket-button">Basket</a>
         <a href="/account" id="account-button">Your Account</a>
     </div>
@@ -45,7 +101,8 @@
             </ul>
         </div>
         <div class="search-container">
-            <div class="item">
+            <?php echo $html; ?>
+            <!-- <div class="item">
                 <img src="images/placeholder.jpeg" alt="" class="product-img">
                 <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
                 <span role="text" class="product-price">£9.99</span>
@@ -74,7 +131,7 @@
                 <img src="images/placeholder.jpeg" alt="" class="product-img">
                 <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
                 <span role="text" class="product-price">£9.99</span>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
