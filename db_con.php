@@ -1,14 +1,15 @@
 <?php
-// Database configuration
-$db_host = 'localhost';
-$db_user = 'ps750_CI536';
-$db_pass = 'GROUPPROJECT123';
-$db_name = 'ps750_group_proj';
+// db details
+$db_host = 'db.davisaur.me';
+$db_user = 'groupproj';
+$db_pass = '*r!%sV$nPZ5@%W%4';
+$db_name = 'groupproj';
 
-// Create database connection
+
+// creating connection to db
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
-// Check connection
+// check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
