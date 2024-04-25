@@ -1,0 +1,30 @@
+.topnav {
+    display: flex;
+    background-color: black ;
+    color: white;
+    padding: 8px;
+    justify-content: space-evenly;
+}
+
+.topnav a {
+    display: block;
+    padding: 0.25em;    
+    color: white;
+}
+
+.topnav select {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+
+.topnav .search-bar {
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+
+.topnav a:hover {
+    background-color: darkgray;
+}

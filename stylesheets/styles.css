@@ -3,36 +3,46 @@ body {
     margin: 0px;
 }
 
-/* ----- Navbar ----- */
-.topnav {
+/* ----- Search ----- */
+
+.search-flex {
     display: flex;
-    background-color: black ;
-    color: white;
-    padding: 8px;
-    justify-content: space-evenly;
 }
 
-.topnav a {
-    display: block;
-    padding: 0.25em;    
-    color: white;
+.filters-container {
+    min-width: 200px;
+    padding: 10px;
+    border-right: 1px solid #dfdfdf;
 }
 
-.topnav select {
-    background-color: black;
-    color: white;
-    border-radius: 3px;
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    padding: 10px;
+    
 }
 
-.topnav .search-bar {
-    width: 50%;
-    border-radius: 3px;
-    box-shadow: none;
+p {
+    padding: 0;
+    margin: 0;
 }
 
+ul {
+    list-style: none;
+    margin-top: 0.2em;
+    padding-left: 1.5em;
+}
 
-.topnav a:hover {
-    background-color: darkgray;
+li > a {
+    color:black;
+    text-decoration: none;
+}
+
+li > a:hover {
+    color:black;
+    text-decoration: underline;
 }
 
 /* ----- Item Scroll ----- */
