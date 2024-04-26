@@ -31,11 +31,13 @@
             debug_to_console("Success, item searched.");
 
             foreach($results as $item) {
-                $html .= "<div class=\"item\">
-                <img src=\"images/products/{$item['id']}.jpg\" alt=\"\" class=\"product-img\">
-                <h4 class=\"product-name\">{$item['name']}</h4>
-                <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
-            </div>";
+                $html .= "<a href=\"product.php?id={$item['id']}\">
+                    <div class=\"item\">
+                    <img src=\"images/products/{$item['id']}.jpg\" alt=\"\" class=\"product-img\">
+                    <h4 class=\"product-name\">{$item['name']}</h4>
+                    <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
+                    </div>
+                </a>";
             }
         } else {
             $html = "<h2>No result found :(</h2>";

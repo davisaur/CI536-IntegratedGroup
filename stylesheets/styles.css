@@ -35,12 +35,12 @@ ul {
     padding-left: 1.5em;
 }
 
-li > a {
+a {
     color:black;
     text-decoration: none;
 }
 
-li > a:hover {
+a:hover {
     color:black;
     text-decoration: underline;
 }

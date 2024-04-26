@@ -21,7 +21,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT id, name, price FROM `products` WHERE id='$id';";
+        $sql = "SELECT id, name, price, description FROM `products` WHERE id='$id';";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
@@ -35,6 +35,7 @@
 
             $name = $results['name'];
             $price = $results['price'];
+            $description = $results['description'];
 
             // foreach($results as $item) {
             //     $html .= "<div class=\"item\">
@@ -93,7 +94,7 @@
         </div>
         <div class="product-details-container">
             <h3 class="product-description-title">Product Description</h3>
-            <p class="product-description-contents">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis recusandae debitis nisi iste iusto corrupti, natus est et vitae ullam, eius tenetur impedit, sunt delectus fugit commodi nostrum nemo sed itaque voluptatum quis? Tempora voluptatem ipsam aspernatur quo, rerum quaerat maiores reiciendis voluptatum perferendis voluptas, necessitatibus quia molestias dolores ad!</p>
+            <p class="product-description-contents"><?php echo $description;?></p>
             <span role="text" class="product-page-price">£<?php echo $price; ?></span>
             <input type="button" value="Add to Basket" class="add-basket-button">
             <input type="number" name="Quantity" min="1" max="100" value="1" class="quantity-selector">
