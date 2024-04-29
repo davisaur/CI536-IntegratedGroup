@@ -1,6 +1,5 @@
-
 <div class="topnav">
-    <a href="/" id="home-button">Home</a>
+    <a href="index.php" id="home-button">Home</a>
     <select name="categories" id="categories">
         <option value="" disabled selected hidden>Categories</option>
         <option value="0">Fashion</option>
@@ -14,3 +13,4 @@
     <a href="/basket" id="basket-button">Basket</a>
     <a href="/account" id="account-button">Your Account</a>
 </div>
+<script src="scripts/search.js"></script>

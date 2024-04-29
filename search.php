@@ -92,36 +92,6 @@
         </div>
         <div class="search-container">
             <?php echo $html; ?>
-            <!-- <div class="item">
-                <img src="images/placeholder.jpeg" alt="" class="product-img">
-                <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
-                <span role="text" class="product-price">£9.99</span>
-            </div>
-            <div class="item">
-                <img src="images/placeholder.jpeg" alt="" class="product-img">
-                <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
-                <span role="text" class="product-price">£9.99</span>
-            </div>
-            <div class="item">
-                <img src="images/placeholder.jpeg" alt="" class="product-img">
-                <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
-                <span role="text" class="product-price">£9.99</span>
-            </div>
-            <div class="item">
-                <img src="images/placeholder.jpeg" alt="" class="product-img">
-                <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
-                <span role="text" class="product-price">£9.99</span>
-            </div>
-            <div class="item">
-                <img src="images/placeholder.jpeg" alt="" class="product-img">
-                <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
-                <span role="text" class="product-price">£9.99</span>
-            </div>
-            <div class="item">
-                <img src="images/placeholder.jpeg" alt="" class="product-img">
-                <h4 class="product-name">Product Name, Lorem ipsum dolor sit amet.</h4>
-                <span role="text" class="product-price">£9.99</span>
-            </div> -->
         </div>
     </div>
 </body>
