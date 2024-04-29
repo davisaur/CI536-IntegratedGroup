@@ -74,6 +74,7 @@ if(isset($_POST["submit"])) {
     $stmt->bind_param("siidss", trim($_POST["title"]), $_POST["category"], $_POST["stock"], $_POST["price"], trim($_POST["description"]), $imageFileType);
     if($stmt->execute()) {
       if (rename($_FILES["imageToUpload"]["tmp_name"], ($target_dir . "{$stmt->insert_id}." . $imageFileType))) {
+        chmod(($target_dir . "{$stmt->insert_id}." . $imageFileType), 0644);
         echo "The file ". htmlspecialchars( basename( $_FILES["imageToUpload"]["name"])). " has been uploaded.";
       } else {
         echo "Sorry, there was an error uploading your file.";
