@@ -18,7 +18,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT id, name, price FROM `products` WHERE name LIKE '%$search%';";
+        $sql = "SELECT id, name, price, img_file_type FROM `products` WHERE name LIKE '%$search%';";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
@@ -33,7 +33,7 @@
             foreach($results as $item) {
                 $html .= "<a href=\"product.php?id={$item['id']}\">
                     <div class=\"item\">
-                    <img src=\"images/products/{$item['id']}.jpg\" alt=\"\" class=\"product-img\">
+                    <img src=\"images/products/{$item['id']}.{$item['img_file_type']}\" alt=\"\" class=\"product-img\">
                     <h4 class=\"product-name\">{$item['name']}</h4>
                     <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
                     </div>

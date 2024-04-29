@@ -21,7 +21,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT id, name, price, description FROM `products` WHERE id='$id';";
+        $sql = "SELECT id, name, price, description, img_file_type FROM `products` WHERE id='$id';";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
@@ -36,14 +36,8 @@
             $name = $results['name'];
             $price = $results['price'];
             $description = $results['description'];
+            $imgFileType = $results['img_file_type'];
 
-            // foreach($results as $item) {
-            //     $html .= "<div class=\"item\">
-            //     <img src=\"images/products/{$item['id']}.jpg\" alt=\"\" class=\"product-img\">
-            //     <h4 class=\"product-name\">{$item['name']}</h4>
-            //     <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
-            // </div>";
-            // }
         } else {
             $html = "<h2>No result found :(</h2>";
             debug_to_console("No result.");
@@ -90,7 +84,7 @@
     <h1 class="product-page-title"><?php echo $name; ?></h1>
     <div class="product-flex">
         <div class="product-image-container">
-            <img src="images/products/<?php echo $id;?>.jpg" alt="PLACEHOLDER IMAGE" class="product-page-image">
+            <img src="images/products/<?php echo "$id.$imgFileType";?>" alt="PLACEHOLDER IMAGE" class="product-page-image">
         </div>
         <div class="product-details-container">
             <h3 class="product-description-title">Product Description</h3>
