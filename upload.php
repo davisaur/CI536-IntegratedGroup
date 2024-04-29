@@ -115,7 +115,7 @@ if($query->num_rows > 0) {
         </select>
         <br>
         <label for="description">Product Description: </label>
-        <input type="text" name="description" id="description"><br>
+        <textarea name="description" id="description" rows="4" cols="50"></textarea><br>
         <label for="stock">Items in Stock: </label>
         <input type="number" name="stock" id="stock" min="0" max="9999"><br>
         <label for="price">Price: </label>

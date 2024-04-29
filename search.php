@@ -1,22 +1,11 @@
 <?php
-    $servername = "db.davisaur.me";
-    $username = "groupproj";
-    $password = "*r!%sV\$nPZ5@%W%4"; 
-    $dbname = "groupproj"; 
+    include 'db_con.php';
 
     $html = '';
 
     if(isset($_REQUEST['search'])) {
         $search = $_REQUEST['search'];
         debug_to_console("Search Parameter Set.");
-        
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        if ($conn->connect_error) {
-            debug_to_console("Connection to SQL server failed.");
-            http_response_code(500);
-            die("Connection failed: " . $conn->connect_error);
-        }
 
         $sql = "SELECT id, name, price, img_file_type FROM `products` WHERE name LIKE '%$search%';";
         $result = $conn->query($sql);
@@ -48,6 +37,24 @@
 
     }
 
+    function get_filter_categories() {
+        include 'db_con.php';
+        $query = $conn->query("SELECT * FROM category;");
+        $filter_categories = "";
+        if($query->num_rows > 0) {
+          $results = array();
+          while($row = $query->fetch_assoc()) {
+            $results[] = $row;
+          }
+        
+          foreach($results as $category) {
+            $filter_categories .= "<li><a href=\"search.php?categories={$category["id"]}\">{$category["category"]}</a></li>";
+          }
+
+          return $filter_categories;
+        }
+    }
+
     function debug_to_console($data) {
         $output = $data;
         if (is_array($output))
@@ -66,31 +73,12 @@
     <script src="scripts/search.js"></script>
 </head>
 <body>
-    <div class="topnav">
-        <a href="/" id="home-button">Home</a>
-        <select name="categories" id="categories">
-            <option value="" disabled selected hidden>Categories</option>
-            <option value="0">Fashion</option>
-            <option value="1">Electronics</option>
-            <option value="2">Books</option>
-            <option value="3">DVDs, CDs &amp; Media</option>
-            <option value="4">Home, Garden &amp; DIY</option>
-            <option value="5">Pets</option>
-        </select>
-        <input type="text" placeholder="Search for products..." id="searchbar">
-        <a href="/basket" id="basket-button">Basket</a>
-        <a href="/account" id="account-button">Your Account</a>
-    </div>
+    <?php require 'header.php';?>
     <div class="search-flex">
         <div class="filters-container">
             <p>Categories</p>
             <ul>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Electronics</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">DVDs, CDs &amp; Media</a></li>
-                <li><a href="#">Home, Garden &amp; DIY</a></li>
-                <li><a href="#">Pets</a></li>
+                <?php echo get_filter_categories();?>
             </ul>
             <p>Price</p>
             <ul>
