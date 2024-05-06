@@ -12,5 +12,21 @@
     <input type="text" placeholder="Search for products..." id="searchbar">
     <a href="/basket" id="basket-button">Basket</a>
     <a href="/account" id="account-button">Your Account</a>
+    <?php
+    // start the session if it hasn't already started
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION['loggedin'])) {
+        // user is not logged in, show Register and Login buttons
+        echo '<a href="register.php" id="account-button">Register</a>';
+        echo '<a href="login.php" id="account-button">Login</a>';
+    } else {
+        // user is logged in, show Logout button
+        echo '<a href="logout.php" id="account-button">Logout</a>';
+    }
+    ?>
+
 </div>
 <script src="scripts/search.js"></script>
