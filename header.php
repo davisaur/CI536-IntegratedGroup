@@ -14,9 +14,6 @@
     <a href="/account" id="account-button">Your Account</a>
     <?php
     // start the session if it hasn't already started
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
 
     if (!isset($_SESSION['loggedin'])) {
         // user is not logged in, show Register and Login buttons
