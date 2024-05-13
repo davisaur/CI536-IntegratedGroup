@@ -64,40 +64,40 @@
         } else {
             $html = "<h2>No result found :(</h2>";
             debug_to_console("No result.");
+        }
+    } else if(isset($_REQUEST['category'])) {
+        // Only category filter applied
+        $category_id = $_REQUEST['category'];
+        debug_to_console("Category Filter Applied: " . $category_id);
+    
+        $sql = "SELECT id, name, price, img_file_type FROM `products` WHERE category = $category_id;";
+        $result = $conn->query($sql);
+    
+        if($result->num_rows > 0) {
+            $results = array();
+        
+            // Output data of each row
+            while($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+            debug_to_console("Success, products filtered by category.");
 
-        } else if(isset($_REQUEST['category'])) {
-            // Only category filter applied
-            $category_id = $_REQUEST['category'];
-            debug_to_console("Category Filter Applied: " . $category_id);
-    
-            $sql = "SELECT id, name, price, img_file_type FROM `products` WHERE category = $category_id;";
-            $result = $conn->query($sql);
-    
-            if($result->num_rows > 0) {
-                $results = array();
-                
-                // Output data of each row
-                while($row = $result->fetch_assoc()) {
-                    $results[] = $row;
-                }
-                debug_to_console("Success, products filtered by category.");
-    
-                foreach($results as $item) {
-                    $html .= "<a href=\"product.php?id={$item['id']}\">
-                        <div class=\"item\">
-                        <img src=\"images/products/{$item['id']}.{$item['img_file_type']}\" alt=\"\" class=\"product-img\">
-                        <h4 class=\"product-name\">{$item['name']}</h4>
-                        <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
-                        </div>
+            foreach($results as $item) {
+                $html .= "<a href=\"product.php?id={$item['id']}\">
+                    <div class=\"item\">
+                    <img src=\"images/products/{$item['id']}.{$item['img_file_type']}\" alt=\"\" class=\"product-img\">
+                    <h4 class=\"product-name\">{$item['name']}</h4>
+                    <span role=\"text\" class=\"product-price\">£{$item['price']}</span>
+                    </div>
                     </a>";
-                }
-            } else {
-                $html = "<h2>No products found in this category.</h2>";
-                debug_to_console("No products found in the selected category.");
             }
         } else {
-            debug_to_console("No search parameter or category filter detected.");
+            $html = "<h2>No products found in this category.</h2>";
+            debug_to_console("No products found in the selected category.");
         }
+    } else {
+        debug_to_console("No search parameter or category filter detected.");
+    }
 
     function get_filter_categories() {
         include 'db_con.php';
