@@ -10,7 +10,7 @@
     - [ ] Add JS for Filters on side to be added to the URL
         - [x] Categories
         - [ ] Price
-    - [ ] Use parameters within URL to filter products (i.e. maxprice, minprice, category & search query)
+    - [ ] Use parameters within URL to filter products 
         - [x] Search
         - [x] Category
         - [ ] Min/Max Price
