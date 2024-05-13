@@ -1,5 +1,6 @@
 <?php
     include 'db_con.php';
+    require 'session.php';
 
     $html = '';
 
