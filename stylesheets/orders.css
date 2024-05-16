@@ -1,0 +1,39 @@
+.orders-wrapper {
+    margin: 10px auto;
+    max-width: 900px;
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 1em;
+}
+
+.order-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    padding: 10px;
+    height: 100%;
+}
+
+.order-container:last-child {
+    border-bottom: none;
+}
+
+
+.order-img > img {
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.order-content {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.quantity-ordered {
+    margin-top: auto;
+    padding-bottom: 2px;
+    font-size: 14px;
+    font-weight: bold;
+}
