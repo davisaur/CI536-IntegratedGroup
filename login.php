@@ -1,6 +1,5 @@
 <?php
 session_start();
-error_reporting(E_ALL); //used for debug, sometimes php doesnt explicitly say error msgs
 
 include 'db_con.php';
 
@@ -10,7 +9,7 @@ if (isset($_POST['usr'], $_POST['password'])) {
     $username = $_POST['usr'];
     $password = $_POST['password'];
 
-     // the s is for datatype string  & ? are for sql injection prevention
+    // the s is for datatype string  & ? are for sql injection prevention
     $stmt = $conn->prepare('SELECT * FROM users WHERE email_address = ?');
     $stmt->bind_param('s', $username);
     $stmt->execute();
@@ -23,20 +22,18 @@ if (isset($_POST['usr'], $_POST['password'])) {
         //password_verify is used to hash
         if(password_verify($password, $row['password'])){
 
-            //set session to logged in *crucial* do not remove
+            //set session to logged in 
             $_SESSION['loggedin'] = true;
 
             header("Location: index.php");
             exit();
         } else {
-            $error_message = "Incorrect password.";
+            $error_message = "Invalid username/password.";
         }
     } else {
-        $error_message =  "User not found.";
+        $error_message =  "Invalid username/password.";
     }
-} else {
-    $error_message =  "Username and password are required.";
-}
+} 
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +56,17 @@ if (isset($_POST['usr'], $_POST['password'])) {
                 <br>
                 <input type="submit" value="Submit">
             </form>
-            <div class="error-message-box">
-                <span class="alert-content">
-                    <?php if (!empty($error_message)) {
-                        echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8');
-                    } ?>
-                
-                </span>
-            </div>
+
+            <?php if (!empty($error_message)): ?>
+                <div class="error-message-box">
+                    <img src="images/alert.png" alt="Alert Icon">
+                    <div class="error-container">
+                        <span class="alert-content">
+                            <?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?>
+                        </span>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </body>

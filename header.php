@@ -13,7 +13,6 @@
     <a href="/basket" id="basket-button">Basket</a>
     <a href="/account" id="account-button">Your Account</a>
     <?php
-    // start the session if it hasn't already started
 
     if (!isset($_SESSION['loggedin'])) {
         // user is not logged in, show Register and Login buttons

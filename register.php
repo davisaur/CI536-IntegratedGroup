@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // hash the password 
             $passwordHash = password_hash($psw, PASSWORD_DEFAULT);
 
-            //use prepeared statement to avoid sql injection
+            //use prepared statement to avoid sql injection
             $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email_address, password, address_line_1, address_line_2, city, postcode, phone_number) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("sssssssss", $fname, $lname, $email, $passwordHash, $addline1, $addline2, $city, $postcode, $phoneNum);
 
@@ -103,17 +103,6 @@ $conn->close();
                 <button type="submit">Register</button>
             </div>
         </form>
-        <div class="error-message-box">
-            <img src="images/alert.png" alt="Alert Icon">
-            <div class="error-container">
-                <h4 class="error-heading">There was a problem</h4>
-                <span class="alert-content">
-                    <?php if (!empty($error_message)) {
-                        echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8');
-                    } ?>
-                </span>
-            </div>
-        </div>
     </div>
 </body>
 </html>
