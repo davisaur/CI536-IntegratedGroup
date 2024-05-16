@@ -24,6 +24,7 @@ if (isset($_POST['usr'], $_POST['password'])) {
 
             //set session to logged in 
             $_SESSION['loggedin'] = true;
+            $_SESSION['userid'] = $row['id'];
 
             header("Location: index.php");
             exit();
@@ -41,8 +42,8 @@ if (isset($_POST['usr'], $_POST['password'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/login.css">
     <link rel="stylesheet" href="stylesheets/alertbox.css">
+    <link rel="stylesheet" href="stylesheets/login.css">
     <title>Login</title>
 </head>
 <body>
