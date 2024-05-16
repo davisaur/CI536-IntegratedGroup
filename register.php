@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL); // used for debug, sometimes php doesnt explicitly say error msgs
 
 include 'db_con.php';
 
@@ -34,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $passwordHash = password_hash($psw, PASSWORD_DEFAULT);
 
             //use prepared statement to avoid sql injection
-            $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email_address, password, address_line_1, address_line_2, city, postcode, phone_number) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email_address, password, address_line_1, address_line_2, city, postcode, phone_number)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("sssssssss", $fname, $lname, $email, $passwordHash, $addline1, $addline2, $city, $postcode, $phoneNum);
 
             if ($stmt->execute()) {
@@ -103,6 +103,16 @@ $conn->close();
                 <button type="submit">Register</button>
             </div>
         </form>
+        <?php if (!empty($error_message)): ?>
+                <div class="error-message-box">
+                    <img src="images/alert.png" alt="Alert Icon">
+                    <div class="error-container">
+                        <span class="alert-content">
+                            <?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?>
+                        </span>
+                    </div>
+                </div>
+            <?php endif; ?>
     </div>
 </body>
 </html>
