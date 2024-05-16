@@ -28,10 +28,10 @@ if (isset($_POST['usr'], $_POST['password'])) {
             header("Location: index.php");
             exit();
         } else {
-            $error_message = "Invalid username/password.";
+            $error_message = "Invalid username or password.";
         }
     } else {
-        $error_message =  "Invalid username/password.";
+        $error_message =  "Invalid username or password.";
     }
 } 
 ?>
@@ -54,14 +54,15 @@ if (isset($_POST['usr'], $_POST['password'])) {
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="login-submit-button">
             </form>
 
             <?php if (!empty($error_message)): ?>
                 <div class="error-message-box">
-                    <img src="images/alert.png" alt="Alert Icon">
+                    <img src="images/alert.png" alt="Alert Icon" class="error-img">
                     <div class="error-container">
-                        <span class="alert-content">
+                        <h4 class="error-heading">There was a problem</h4>
+                        <span class="error-text">
                             <?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?>
                         </span>
                     </div>

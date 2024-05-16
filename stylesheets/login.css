@@ -20,14 +20,14 @@ body {
     box-shadow: 0px 0ch 10px rgb(239, 239, 239);
 }
 
-.login_container .field {
+.login_container input[type="password"], input[type="text"] {
     width: 95%;
     height: 2em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.login_container button[type=submit] {
+.login-submit-button {
     display: block;
     margin: auto;
     margin-top: 1em;
@@ -44,6 +44,7 @@ body {
     border-radius: 0.5em;
     box-shadow: 3px 3px 20px rgb(241, 179, 179);
     margin-top: 1em;
+    min-height: 36px;
 }
 
 .error-message-box img {

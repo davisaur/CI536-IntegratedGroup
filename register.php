@@ -58,6 +58,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/register.css">
+    <link rel="stylesheet" href="stylesheets/login.css">
     <title>Register - Marketplace</title>
 </head>
 <body>
@@ -107,6 +108,7 @@ $conn->close();
                 <div class="error-message-box">
                     <img src="images/alert.png" alt="Alert Icon">
                     <div class="error-container">
+                        <h4 class="error-heading">There was a problem</h4>
                         <span class="alert-content">
                             <?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?>
                         </span>

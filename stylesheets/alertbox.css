@@ -1,0 +1,35 @@
+/* ----- Error Container ----- */
+
+.error-message-box {
+    display: block;
+    outline: 1px solid red;
+    padding: 10px;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 20px rgb(241, 179, 179);
+    margin-top: 1em;
+    min-height: 36px;
+}
+
+.error-message-box img {
+    position: absolute;
+    display:inline;
+    width: 36px;
+}
+
+.error-container {
+    position:relative;
+    padding-left: 8px;
+    width: 85%;
+    left: 15%;
+}
+
+.error-text {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.error-heading {
+    margin: 0px;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
