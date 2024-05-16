@@ -1,0 +1,36 @@
+
+
+.basket-item-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.basket-quantity-selector {
+
+}
+
+.basket-remove-button {
+    background-image: linear-gradient(red, darkred);
+    color: white;
+    border-radius: 3px;
+    border-color: rgb(255, 0, 0);
+    text-shadow: black 1px 1px 3px;
+}
+
+.checkout-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.basket-checkout-button {
+    padding: 8px 2.5em;
+    border-color: rgb(255, 213, 0);
+    border-radius: 8px;
+    border-style: gr;
+    background-image: linear-gradient(yellow, rgb(229, 194, 37));
+
+}

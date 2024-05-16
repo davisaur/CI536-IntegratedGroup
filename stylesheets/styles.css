@@ -164,10 +164,6 @@ a:hover {
     min-width: 200px;
 }
 
-.item:hover {
-    text-decoration: underline;
-}
-
 .product-name {
     font-weight: 100;
     margin: 10px 0;

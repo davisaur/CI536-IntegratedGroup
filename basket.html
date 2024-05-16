@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket - Marketplace</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/basket.css">
+</head>
+<body>
+    <div class="item">
+        <a href="product.php?id={$item['id']}">
+        <img src="images/products/{$item['id']}.{$item['img_file_type']}" alt="" class="product-img">
+        <h4 class="product-name">{$item['name']}</h4>
+        <span role="text" class="product-price">£{$item['price']}</span>
+        </a>
+        <div class="basket-item-buttons-container">
+            <input type="number" name="Quantity" min="1" max="100" value="1" class="basket-quantity-selector">
+            <input type="button" value="Remove" class="basket-remove-button">
+        </div>
+    </div>
+</body>
+</html>
