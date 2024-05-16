@@ -126,12 +126,12 @@
             </ul>
             <p>Price</p>
             <ul>
-                <li><a href="search.php?price=1">Under £5</a></li>
-                <li><a href="search.php?price=2">£5-£10</a></li>
-                <li><a href="search.php?price=3">£10-£25</a></li>
-                <li><a href="search.php?price=4">£25-£50</a></li>
-                <li><a href="search.php?price=5">£50-£100</a></li>
-                <li><a href="search.php?price=6">Over £100</a></li>
+                <li><a href="#" class="price-filter" data-price="1">Under £5</a></li>
+                <li><a href="#" class="price-filter" data-price="2">£5-£10</a></li>
+                <li><a href="#" class="price-filter" data-price="3">£10-£25</a></li>
+                <li><a href="#" class="price-filter" data-price="4">£25-£50</a></li>
+                <li><a href="#" class="price-filter" data-price="5">£50-£100</a></li>
+                <li><a href="#" class="price-filter" data-price="6">Over £100</a></li>
             </ul>
         </div>
         <div class="search-container">
