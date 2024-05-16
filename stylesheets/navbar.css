@@ -1,13 +1,19 @@
 .topnav {
     display: flex;
+    flex-wrap: wrap;
     background-color: black ;
     color: white;
     padding: 8px;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+}
+
+.topnav > a, .topnav > select, .topnav > input {
+    margin: 0 6px;
+    font-size: 12px;
 }
 
 .topnav a {
-    display: block;
+    /* display: block; */
     padding: 0.25em;    
     color: white;
 }
@@ -16,10 +22,15 @@
     background-color: black;
     color: white;
     border-radius: 3px;
+    border: 1;
 }
 
 .topnav a:hover {
     background-color: darkgray;
+}
+
+.topnav > input {
+    flex: 1;
 }
 
 #searchbar {

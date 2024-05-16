@@ -1,6 +1,6 @@
 <div class="topnav">
-    <a href="index.php" id="home-button">Home</a>
-    <select name="categories" id="categories">
+    <a href="index.php" class="home-button">Home</a>
+    <select name="categories" class="categories-selector">
         <option value="" disabled selected hidden>Categories</option>
         <option value="0">Fashion</option>
         <option value="1">Electronics</option>
@@ -10,8 +10,8 @@
         <option value="5">Pets</option>
     </select>
     <input type="text" placeholder="Search for products..." id="searchbar">
-    <a href="/basket" id="basket-button">Basket</a>
-    <a href="/account" id="account-button">Your Account</a>
+    <a href="basket.php" class="basket-button nav-button">Basket</a>
+    <a href="orders.php" class="account-button nav-button">Your Orders</a>
     <?php
 
     if (!isset($_SESSION['loggedin'])) {
