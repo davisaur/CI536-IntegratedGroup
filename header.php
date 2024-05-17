@@ -10,8 +10,6 @@
         <option value="5">Pets</option>
     </select>
     <input type="text" placeholder="Search for products..." id="searchbar">
-    <a href="basket.php" class="basket-button nav-button">Basket</a>
-    <a href="orders.php" class="account-button nav-button">Your Orders</a>
     <?php
 
     if (!isset($_SESSION['loggedin'])) {
@@ -20,6 +18,8 @@
         echo '<a href="login.php" id="account-button">Login</a>';
     } else {
         // user is logged in, show Logout button
+        echo '<a href="basket.php" class="basket-button nav-button">Basket</a>';
+        echo '<a href="orders.php" class="account-button nav-button">Your Orders</a>';
         echo '<a href="logout.php" id="account-button">Logout</a>';
     }
     ?>

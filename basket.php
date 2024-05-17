@@ -4,7 +4,7 @@
 
     $html = '';
 
-    if($_SESSION['loggedin']) {
+    if(isset($_SESSION['loggedin'])) {
         $userID = $_SESSION['userid'];
         if($_SERVER["REQUEST_METHOD"] === "POST") {
             if(isset($_POST['id']) && isset($_POST['quantity'])) {
@@ -73,6 +73,9 @@
                 </div>";
             }
         }
+    } else {
+        header('Location: index.php');
+        exit();
     }
 
 ?>
