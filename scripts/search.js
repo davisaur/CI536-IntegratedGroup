@@ -12,6 +12,15 @@ window.addEventListener("load", function(){
         }
     });
 
+    // Function to handle category selection from dropdown
+    document.getElementById("categoryDropdown").addEventListener("change", function(event) {
+        var categoryId = this.options[this.selectedIndex].getAttribute("data-category"); // Get the data-category attribute of the selected option
+        console.log(categoryId);
+        if (categoryId !== "") {
+            window.location.href = 'search.php?category=' + categoryId; // Redirect to search.php with the category parameter
+        }
+    });
+
     document.querySelectorAll(".category-filter").forEach(function(link) {
         link.addEventListener("click", function(event) {
             event.preventDefault();

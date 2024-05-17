@@ -1,13 +1,13 @@
 <div class="topnav">
     <a href="index.php" class="home-button">Home</a>
-    <select name="categories" class="categories-selector">
+    <select name="categories" class="categories-selector" id="categoryDropdown">
         <option value="" disabled selected hidden>Categories</option>
-        <option value="0">Fashion</option>
-        <option value="1">Electronics</option>
-        <option value="2">Books</option>
-        <option value="3">DVDs, CDs &amp; Media</option>
-        <option value="4">Home, Garden &amp; DIY</option>
-        <option value="5">Pets</option>
+        <option value="0" data-category="1">Fashion</option>
+        <option value="1" data-category="2">Electronics</option>
+        <option value="2" data-category="3">Books</option>
+        <option value="3" data-category="4">DVDs, CDs &amp; Media</option>
+        <option value="4" data-category="5">Home, Garden &amp; DIY</option>
+        <option value="5" data-category="6">Pets</option>
     </select>
     <input type="text" placeholder="Search for products..." id="searchbar">
     <?php
