@@ -11,7 +11,7 @@
         $id = $_REQUEST['id'];
         debug_to_console("ID Parameter Set.");
 
-        $sql = "SELECT id, name, price, description, img_file_type FROM `products` WHERE id='$id';";
+        $sql = "SELECT * FROM `products` WHERE id='$id';";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
@@ -27,6 +27,7 @@
             $price = $results['price'];
             $description = $results['description'];
             $imgFileType = $results['img_file_type'];
+            $qtyInStock = $results['quantity'];
 
         } else {
             $html = "<h2>No result found :(</h2>";
@@ -63,11 +64,14 @@
             <img src="images/products/<?php echo "$id.$imgFileType";?>" alt="PLACEHOLDER IMAGE" class="product-page-image">
         </div>
         <div class="product-details-container">
+            <form action="basket.php" method="POST">
+                <span role="text" class="product-page-price">£<?php echo $price; ?></span>
+                <input type="submit" value="Add to Basket" class="add-basket-button">
+                <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
+                <input type="number" name="quantity" min="1" max="<?php echo $qtyInStock; ?>" value="1" class="quantity-selector">
+            </form>
             <h3 class="product-description-title">Product Description</h3>
             <p class="product-description-contents"><?php echo $description;?></p>
-            <span role="text" class="product-page-price">£<?php echo $price; ?></span>
-            <input type="button" value="Add to Basket" class="add-basket-button">
-            <input type="number" name="Quantity" min="1" max="100" value="1" class="quantity-selector">
         </div>
     </div>
 </div>

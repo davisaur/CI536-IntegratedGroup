@@ -67,7 +67,7 @@ a:hover {
 
 .product-details-container {
     padding: 3em;
-    padding-top: 5em;
+    padding-top: 9em;
 }
 
 .product-page-image {
@@ -79,7 +79,6 @@ a:hover {
 
 .product-page-title {
     text-align: center;
-    font-size: px;
 }
 
 .product-description-contents {
@@ -91,6 +90,7 @@ a:hover {
     font-size: 32px;
     font-weight: 600;
     margin: 20px;
+    margin-left: 0;
 }
 
 .add-basket-button {
@@ -128,6 +128,8 @@ a:hover {
     transform: translateY(-5px);
     font-size: larger;
     margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
     
 }
 
