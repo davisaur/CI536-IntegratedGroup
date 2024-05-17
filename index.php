@@ -34,6 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/navbar.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="scripts/search.js"></script>
     <title>Homepage - Marketplace</title>
 </head>
 <body>
