@@ -2,12 +2,19 @@
     <a href="index.php" class="home-button"><img src="images/bazaar_white_logo.png" alt="Bazaar Logo" class="header-logo"></a>
     <select name="categories" class="categories-selector" id="categoryDropdown">
         <option value="" disabled selected hidden>Categories</option>
-        <option value="0" data-category="1">Fashion</option>
-        <option value="1" data-category="2">Electronics</option>
-        <option value="2" data-category="3">Books</option>
-        <option value="3" data-category="4">DVDs, CDs &amp; Media</option>
-        <option value="4" data-category="5">Home, Garden &amp; DIY</option>
-        <option value="5" data-category="6">Pets</option>
+        <?php 
+            include 'db_con.php';
+            $query = $conn->query("SELECT * FROM category;");
+            $filter_categories = "";
+            if($query->num_rows > 0) {
+                while($row = $query->fetch_assoc()) {
+                    $categoryId = $row["id"];
+                    $categoryName = $row["category"];
+                    $filter_categories .= "<option value=\"$categoryId\" data-category=\"$categoryId\">{$categoryName}</option>";
+                }
+            }
+            echo $filter_categories;
+        ?>
     </select>
     <input type="text" placeholder="Search for products..." id="searchbar">
     <?php
