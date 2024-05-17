@@ -54,12 +54,16 @@ if (isset($_SESSION['loggedin'])) {
                 $img_file_type = htmlspecialchars($row['img_file_type']);
                 ?>
                 <div class="order-container">
+                <a href="product.php?id=<?php echo $product_id?>">    
                     <div class="order-img">
                         <img src="images/products/<?php echo $product_id . "." . $img_file_type ?>" alt="" class="product-img">
                     </div>
+                </a>
                     <div class="order-content">
-                        <h4 class="product-name"><?php echo $product_name; ?></h4>
-                        <span role="text" class="product-price">£ <?php echo $product_price; ?></span>
+                        <a href="product.php?id=<?php echo $product_id?>">
+                            <h4 class="product-name"><?php echo $product_name; ?></h4>
+                            <span role="text" class="product-price">£ <?php echo $product_price; ?></span>
+                        </a>
                         <span role="text" class="quantity-ordered">Quantity ordered: <?php echo $quantity_ordered; ?></span>
                         <span role="text" class="date-ordered">Date ordered: <?php echo $date_ordered; ?></span>
 
