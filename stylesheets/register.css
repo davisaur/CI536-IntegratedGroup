@@ -51,33 +51,3 @@ body {
 label {
     font-weight: bold;
 }
-
-/* ----- Error Container ----- */
-
-.error-message-box {
-    display: block;
-    outline: 1px solid red;
-    padding: 10px;
-    border-radius: 0.5em;
-    box-shadow: 3px 3px 20px rgb(241, 179, 179);
-    margin-top: 1em;
-}
-
-.error-message-box img {
-    position: absolute;
-    display:inline;
-    width: 36px;
-}
-
-.error-container {
-    position:relative;
-    width: 85%;
-    left: 15%;
-}
-
-.error-heading {
-    margin: 0px;
-    margin-top: 0.25em;
-    margin-bottom: 0.5em;
-}
-

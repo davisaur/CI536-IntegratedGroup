@@ -34,3 +34,7 @@ body {
     padding: 1em 2em;
     
 }
+
+label {
+    font-weight: bold;
+}

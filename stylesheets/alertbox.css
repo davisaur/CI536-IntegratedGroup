@@ -1,7 +1,7 @@
 /* ----- Error Container ----- */
 
 .error-message-box {
-    display: block;
+    display: flex;
     outline: 1px solid red;
     padding: 10px;
     border-radius: 0.5em;
@@ -11,21 +11,15 @@
 }
 
 .error-message-box img {
-    position: absolute;
+    /* position: absolute; */
     display:inline;
     width: 36px;
+    height: 36px;
 }
 
 .error-container {
     position:relative;
     padding-left: 8px;
-    width: 85%;
-    left: 15%;
-}
-
-.error-text {
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .error-heading {
