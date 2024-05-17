@@ -1,10 +1,14 @@
 window.addEventListener("load", function(){
     document.getElementById("searchbar").addEventListener("keypress", function(event) {
-        if(event.key === "Enter") {
-            var result = document.getElementById("searchbar").value;
-            var url = new URL(window.location.href);
-            url.searchParams.set("search", result);
-            window.location.href = url.href;
+        if (event.key === "Enter") {
+            var result = document.getElementById("searchbar").value.trim();
+            if (result === "") {
+                // Redirect to search.php when the search term is empty
+                window.location.href = 'search.php';
+            } else {
+                // Redirect to search.php with the search term
+                window.location.href = 'search.php?search=' + result;
+            }
         }
     });
 
