@@ -24,7 +24,7 @@
                     exit();
                 }
             } else {
-                echo $qtyCheck->error;
+                echo $qtyCheck->$error;
             }
         }
     }
