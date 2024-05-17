@@ -9,7 +9,11 @@
 
 .topnav > a, .topnav > select, .topnav > input {
     margin: 0 6px;
-    font-size: 12px;
+    font-size: 18px;
+}
+
+.topnav > a { 
+    align-self: center;
 }
 
 .topnav a {
@@ -31,6 +35,10 @@
 
 .topnav > input {
     flex: 1;
+}
+
+.header-logo {
+    height: 30px;
 }
 
 #searchbar {

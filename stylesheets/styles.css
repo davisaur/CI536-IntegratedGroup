@@ -3,6 +3,7 @@ body {
     margin: 0px;
 }
 
+
 /* ----- Search ----- */
 
 .search-flex {
@@ -154,6 +155,11 @@ a:hover {
     overflow-x: scroll;
     overflow-y: visible;
     /* margin: 1em; */
+}
+
+.home {
+    margin: auto;
+    max-width: 1800px;
 }
 
 .item {

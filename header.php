@@ -1,5 +1,5 @@
 <div class="topnav">
-    <a href="index.php" class="home-button">Home</a>
+    <a href="index.php" class="home-button"><img src="images/bazaar_white_logo.png" alt="Bazaar Logo" class="header-logo"></a>
     <select name="categories" class="categories-selector" id="categoryDropdown">
         <option value="" disabled selected hidden>Categories</option>
         <option value="0" data-category="1">Fashion</option>

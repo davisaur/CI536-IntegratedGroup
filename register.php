@@ -68,6 +68,7 @@
     <div class="register_wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="register_container">
+                <img src="images/bazaar_black_logo.png" alt="Bazaar Logo" class="login-logo">  
                 <div class="register_flex">
                     <div class="register_column">
                         <label for="fname">Forename:</label>

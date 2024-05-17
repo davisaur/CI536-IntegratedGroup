@@ -4,6 +4,14 @@ body {
 
 /* ----- Register Container ----- */
 
+.login-logo {
+    width: 100%;
+    height: 6em;
+    object-fit: contain;
+    max-width: 100%;
+    margin: 1em auto;
+}
+
 .register_wrapper {
     position: absolute;
     margin: 0;

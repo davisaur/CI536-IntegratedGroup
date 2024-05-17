@@ -35,6 +35,14 @@ body {
     
 }
 
+.login-logo {
+    width: 100%;
+    height: 6em;
+    object-fit: contain;
+    max-width: 100%;
+    margin: 1em auto;
+}
+
 label {
     font-weight: bold;
 }

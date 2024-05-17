@@ -50,6 +50,7 @@ if (isset($_POST['usr'], $_POST['password'])) {
 <body>
     <div class="login_wrapper">
         <div class="login_container">
+            <img src="images/bazaar_black_logo.png" alt="Bazaar Logo" class="login-logo">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="usr" required>
