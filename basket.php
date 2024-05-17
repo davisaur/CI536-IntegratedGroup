@@ -95,7 +95,9 @@
         <?php echo $html;?>
     </div>
     <div class="checkout-container">
-        <input type="button" value="Checkout!" class="basket-checkout-button">
+        <form action="checkout.php" method="POST">
+            <input type="submit" value="Checkout!" class="basket-checkout-button">
+        </form>
     </div>
 </body>
 </html>
