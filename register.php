@@ -16,8 +16,12 @@
         $postcode = $_POST['postcode'];
         $phoneNum = $_POST['phoneNum'];
 
+        // check if the phone number is alphanumerial
+        if (!ctype_digit($phoneNum)) {
+            $error_message = "Phone number should contain only digits.";
+        }
         // check if passwords match
-        if ($psw !== $pswconfirm) {
+        elseif ($psw !== $pswconfirm) {
             $error_message = "Passwords do not match.";
         } else {
             //check if the user already exists in the database
@@ -114,6 +118,6 @@
                     </div>
                 </div>
             <?php endif; ?>
-    </div>
+    </div>  
 </body>
 </html>
