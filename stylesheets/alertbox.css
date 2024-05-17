@@ -3,6 +3,7 @@
 .error-message-box {
     display: flex;
     outline: 1px solid red;
+    background-color: white;
     padding: 10px;
     border-radius: 0.5em;
     box-shadow: 3px 3px 20px rgb(241, 179, 179);

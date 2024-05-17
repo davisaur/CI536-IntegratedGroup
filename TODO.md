@@ -23,5 +23,5 @@
         - [x] Iterate all that ^ for every order and add it to the $html variable
     - [x] Change the 'Your Account' to 'Your Orders'
 - [x] Create 'Checkout' Page
-- [ ] Create a seperate login for admin that uses a seperate session var which allows for use of uploading products
+- [x] Create a seperate login for admin that uses a seperate session var which allows for use of uploading products
 - [ ] Video Walkthrough for Report

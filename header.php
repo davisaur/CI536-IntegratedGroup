@@ -18,6 +18,9 @@
         echo '<a href="login.php" id="account-button">Login</a>';
     } else {
         // user is logged in, show Logout button
+        if($_SESSION["user_type"] === "admin") {
+            echo '<a href="upload.php" class="sell-button nav-button">Sell Product</a>';
+        } 
         echo '<a href="basket.php" class="basket-button nav-button">Basket</a>';
         echo '<a href="orders.php" class="account-button nav-button">Your Orders</a>';
         echo '<a href="logout.php" id="account-button">Logout</a>';

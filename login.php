@@ -25,6 +25,7 @@ if (isset($_POST['usr'], $_POST['password'])) {
             //set session to logged in 
             $_SESSION['loggedin'] = true;
             $_SESSION['userid'] = $row['id'];
+            $_SESSION['user_type'] = $row['user_type'];
 
             header("Location: index.php");
             exit();
